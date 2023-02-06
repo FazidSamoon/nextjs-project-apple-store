@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/outline";
 
 const Header = () => {
+  const session: boolean = false;
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between bg-[#E7ECEE] p-4">
       <div className="flex items-center justify-center md:w-1/5">
@@ -50,10 +51,22 @@ const Header = () => {
           </div>
         </Link>
 
-        <UserIcon
-          className="h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100"
-          onClick={() => {}}
-        />
+        {session ? (
+          <Image
+            src={
+              "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png"
+            }
+            alt="user avatar"
+            width={40}
+            height={40}
+            className="rounded-full cursor-pointer"
+          />
+        ) : (
+          <UserIcon
+            className="h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100"
+            onClick={() => {}}
+          />
+        )}
       </div>
     </header>
   );
